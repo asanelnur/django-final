@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Store - Каталог</title>
+    <title>Menu Restaurant - Каталог</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -22,9 +22,9 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #1c7430">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Store</a>
+        <a class="navbar-brand" href="index.html" style="color: yellow; font-family: 'Sans Serif Collection'; font-size: 24px">Restaurant</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,18 +32,18 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="products.html">Каталог <i class="fas fa-shopping-bag"></i> </a>
+                    <a class="nav-link" href="products.html" style="color: yellow">About us <i class="fas fa-info-circle"></i> </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="users/login.html">Войти <i class="fas fa-sign-in-alt"></i></a>
+                    <a class="nav-link" href="users/login.html" style="color: yellow">Войти <i class="fas fa-sign-in-alt"></i></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user-circle"></i>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: yellow">
+                        <li style="color: #ffc107">
                             <a class="dropdown-item" href="users/profile.html">Профиль</a>
                         </li>
                         <li><a class="dropdown-item" href="orders/orders.html">Заказы</a></li>
@@ -68,9 +68,9 @@
 
     <div class="row">
 
-        <div class="col-lg-3">
+        <div class="col-lg-5">
 
-            <h1 class="my-4">Store</h1>
+            <h1 class="my-3" style="color: #1c7430"><i style="color: orange">Menu</i> <i>Restaurant</i></h1>
             <div class="list-group">
                 {% for category in categories %}
                 <a href="#" class="list-group-item">{{ category.name }}</a>
@@ -90,13 +90,13 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="{% static 'vendor/img/slides/slide-1.jpg' %}" alt="First slide">
+                        <img class="d-block img-fluid" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/69f5af93299069.5e60fd4fd3eab.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="{% static 'vendor/img/slides/slide-2.jpg' %}" alt="Second slide">
+                        <img class="d-block img-fluid" src="https://i.pinimg.com/originals/0d/a5/4a/0da54aadb8f7ec5aa45042db00e221ba.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="{% static 'vendor/img/slides/slide-3.jpg' %}" alt="Third slide">
+                        <img class="d-block img-fluid" src="https://i.pinimg.com/originals/2c/a5/33/2ca5333ce2b2dc05a96a11313b4e5e7f.jpg" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -109,30 +109,30 @@
                 </a>
             </div>
 
-            <div class="row">
-                {% for product in products %}
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#">
-                            <img class="card-img-top"
-                                 src={{ product.image }}
-                                 alt="">
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">{{ product.name }}</a>
-                            </h4>
-                            <h5>{{ product.price }} руб.</h5>
-                            <p class="card-text">{{ product.description }}</p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <button type="button" class="btn btn-outline-success">Отправить в корзину</button>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-
-            </div>
+{#            <div class="row">#}
+{#                {% for product in products %}#}
+{#                <div class="col-lg-4 col-md-6 mb-4">#}
+{#                    <div class="card h-100">#}
+{#                        <a href="#">#}
+{#                            <img class="card-img-top"#}
+{#                                 src={{ product.image }}#}
+{#                                 alt="">#}
+{#                        </a>#}
+{#                        <div class="card-body">#}
+{#                            <h4 class="card-title">#}
+{#                                <a href="#">{{ product.name }}</a>#}
+{#                            </h4>#}
+{#                            <h5>{{ product.price }} руб.</h5>#}
+{#                            <p class="card-text">{{ product.description }}</p>#}
+{#                        </div>#}
+{#                        <div class="card-footer text-center">#}
+{#                            <button type="button" class="btn btn-outline-success">Отправить в корзину</button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                {% endfor %}#}
+{##}
+{#            </div>#}
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
@@ -156,9 +156,11 @@
 <!-- /.container -->
 
 <!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
+<footer class="py-5 " style="background-color: #1c7430">
+    <div class="container" style="background-color: #1c7430">
         <p class="m-0 text-center text-white">Copyright &copy; Store 2022</p>
+        <p class="m-0 text-center text-white">8 777 777 77 77</p>
+        <p class="m-0 text-center text-white">Address: Tole bi 59</p>
     </div>
     <!-- /.container -->
 </footer>

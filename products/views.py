@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from products.models import Product, ProductCategory
+from products.models import Dish, Category, Restaurant
 
 
 # Create your views here.
@@ -17,7 +17,7 @@ def index(request):
 def products(request):
     context = {
         'title': 'storeApp',
-        'products': Product.objects.all(),
-        'categories': ProductCategory.objects.all(),
+        'products': Dish.objects.all(),
+        'categories': Restaurant.objects.all(),
     }
     return render(request, 'products/products.html', context)

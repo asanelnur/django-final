@@ -35,7 +35,7 @@
                     <a class="nav-link" href="products.html" style="color: yellow">About us <i class="fas fa-info-circle"></i> </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="users/login.html" style="color: yellow">Войти <i class="fas fa-sign-in-alt"></i></a>
+                    <a class="nav-link" href="/users/login/" style="color: yellow">Войти <i class="fas fa-sign-in-alt"></i></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -70,10 +70,10 @@
 
         <div class="col-lg-5">
 
-            <h1 class="my-3" style="color: #1c7430"><i style="color: orange">Menu</i> <i>Restaurant</i></h1>
+            <h1 class="my-3" style="color: #1c7430"><i style="color: orange">Rauan</i> <i>Restaurant</i></h1>
             <div class="list-group">
                 {% for category in categories %}
-                <a href="#" class="list-group-item">{{ category.name }}</a>
+                <a href="{% url 'products:category' category.id %}" class="list-group-item">{{ category.name }}</a>
                 {% endfor %}
             </div>
 
@@ -109,30 +109,33 @@
                 </a>
             </div>
 
-{#            <div class="row">#}
-{#                {% for product in products %}#}
-{#                <div class="col-lg-4 col-md-6 mb-4">#}
-{#                    <div class="card h-100">#}
-{#                        <a href="#">#}
-{#                            <img class="card-img-top"#}
-{#                                 src={{ product.image }}#}
-{#                                 alt="">#}
-{#                        </a>#}
-{#                        <div class="card-body">#}
-{#                            <h4 class="card-title">#}
-{#                                <a href="#">{{ product.name }}</a>#}
-{#                            </h4>#}
-{#                            <h5>{{ product.price }} руб.</h5>#}
-{#                            <p class="card-text">{{ product.description }}</p>#}
-{#                        </div>#}
-{#                        <div class="card-footer text-center">#}
-{#                            <button type="button" class="btn btn-outline-success">Отправить в корзину</button>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#                {% endfor %}#}
-{##}
-{#            </div>#}
+            <div class="row">
+                {% for product in products %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a href="#">
+                            <img class="card-img-top"
+                                 src='{{ BASE_DIR }}/media/{{ product.image }}'
+                                 alt="">
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="#">{{ product.name }}</a>
+                            </h4>
+                            <h5>{{ product.price }} руб.</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="{% url 'products:basket_add' product.id %}" type="button" class="btn btn-outline-success">Отправить в корзину</a>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="{% url 'products:order_add' product.id %}" type="button" class="btn btn-outline-success">Добавить в заказ</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">

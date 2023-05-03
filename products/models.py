@@ -38,7 +38,6 @@ class Dish(models.Model):
 class Basket(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
     products = models.ForeignKey(to=Dish, on_delete=models.CASCADE)
-    quantity = models.PositiveSmallIntegerField(default=0)
     created_timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -57,7 +56,7 @@ class Payment(models.Model):
 
 
 class OrderItem(models.Model):
-    dish = models.OneToOneField(to=Dish, on_delete=models.CASCADE)
+    dish = models.ForeignKey(to=Dish, on_delete=models.CASCADE)
     quantity = models.PositiveSmallIntegerField(default=0)
     order = models.ForeignKey('Order', on_delete=models.CASCADE, null=True, blank=True,
                                     related_name='order_items')
@@ -65,7 +64,8 @@ class OrderItem(models.Model):
 
 class Order(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
-    total = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    # total = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    status = models.BooleanField(default=False)
     payment = models.OneToOneField(to=Payment, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -34,9 +34,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="products.html" style="color: white">About us <i class="fas fa-info-circle"></i> </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/login/" style="color: white">Войти <i class="fas fa-sign-in-alt"></i></a>
-                </li>
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="/users/login/" style="color: white">Login <i class="fas fa-sign-in-alt"></i></a>#}
+{#                </li>#}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,16 +44,16 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="users/profile.html">Профиль</a>
+                            <a class="dropdown-item" href="users/profile.html">Profile</a>
                         </li>
-                        <li><a class="dropdown-item" href="/store/order/">Заказы</a></li>
-                        <li><a class="dropdown-item" href="/store/baskets/">Корзина</a></li>
+                        <li><a class="dropdown-item" href="/store/order/">Orders</a></li>
+                        <li><a class="dropdown-item" href="/store/baskets/">Basket</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
                             <a class="dropdown-item" href="/users/login">
-                                Выйти
+                                Logout
                             </a>
                         </li>
                     </ul>
@@ -70,7 +70,7 @@
 
         <div class="col" style="margin-bottom:50px ">
 
-            <h1 class="my-3" style="color: #1c7430"><i style="color: orange">Rauan</i> <i>Restaurant</i></h1>
+            <h1 class="my-3" style="color: #1c7430"><i style="color: orange">Our</i> <i>Restaurant</i></h1>
             <div class="d-lg-inline-flex">
                 {% for category in categories %}
                 <a href="{% url 'products:category' category.id %}" class="list-group-item" style="width: 200px">{{ category.name }}</a>

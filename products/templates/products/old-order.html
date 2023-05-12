@@ -66,7 +66,7 @@
 <!-- Page Content -->
 <div class="container">
 
-   {% for order in orders %}
+   {% for order in page_order %}
         <div class="card">
         <a style="margin: 50px" href="{% url 'products:order_detail' order.id %}">
 
@@ -76,11 +76,28 @@
 
        </div>
     {% endfor %}
-    {% if not orders %}
+    {% if not page_order %}
         <h4 class="mt-3 mb-3 d-flex justify-content-between align-items-center mb-3">
                 Мои заказы пуста
         </h4>
     {% endif %}
+<div class="pagination" style="margin-top: 100px;">
+    <span class="step-links">
+        {% if page_order.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a style="margin:0 20px " href="?page={{ page_order.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_order.number }} of {{ page_order.paginator.num_pages }}.
+        </span>
+
+        {% if page_order.has_next %}
+            <a style="margin:0 20px " href="?page={{ page_order.next_page_number }}">next</a>
+            <a href="?page={{ page_order.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
 </div>
 <!-- /.container -->
 

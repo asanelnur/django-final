@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-
+from rest_framework.pagination import PageNumberPagination
 
 from products import forms
 
@@ -22,7 +23,7 @@ def index(request):
 
 def products(request):
     context = {
-        'title': 'storeApp',
+        'title': 'Restaurant',
         'products': Dish.objects.all(),
         'categories': Category.objects.all(),
     }
@@ -245,6 +246,10 @@ def order_created(request):
     }
     return render(request, 'products/order-create-succes.html', context)
 
+
+
+
+
 @login_required
 def old_order(request):
     try:
@@ -252,9 +257,12 @@ def old_order(request):
     except:
         return render(request, 'products/order.html')
 
+    paginator = Paginator(orders, 2)
+    page_number = request.GET.get("page")
+    page_order = paginator.get_page(page_number)
     context = {
         'title': 'storeApp',
-        'orders': orders,
+        'page_order': page_order,
     }
     return render(request, 'products/old-order.html', context)
 

@@ -28,8 +28,10 @@ def login(request):
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(data=request.POST)
+        print(form.errors)
         if form.is_valid():
             form.save()
+            print('ok')
             return HttpResponseRedirect(reverse('users:login'))
     else:
         form = UserRegisterForm()

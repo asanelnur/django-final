@@ -37,10 +37,10 @@ class UserRegisterForm(UserCreationForm):
         'placeholder': 'Введите имя пользователя'
     }))
 
-    # email = forms.CharField(widget=forms.EmailField(attrs={
-    #     'class' : 'form-control py-4',
-    #     'placeholder' : 'Введите почту'
-    # }))
+    email = forms.CharField(widget=forms.EmailInput(attrs={
+        'class': 'form-control py-4',
+        'placeholder': 'Введите почту'
+    }))
 
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control py-4',
@@ -49,7 +49,7 @@ class UserRegisterForm(UserCreationForm):
 
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control py-4',
-        'placeholder': 'Подтвердите почту'
+        'placeholder': 'Подтвердите пароль'
     }))
 
     class Meta:

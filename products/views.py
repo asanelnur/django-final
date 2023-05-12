@@ -12,13 +12,6 @@ from products.models import Dish, Category, Basket, Order, Payment, OrderItem
 
 # Create your views here.
 
-def index(request):
-    context = {
-        'title': 'Store',
-        'username': 'Asan Elnur',
-        'is_promotion': False
-    }
-    return render(request, 'products/index.html', context)
 
 
 def products(request):

@@ -3,27 +3,29 @@
 Clone a Django Project from GitHub and Run
 
 
-###Install the virtualenv
+1) Install the virtualenv
+===========================================
 
 Step 1: Install the virtual environment by running the following command.
 ---------------------------------------------
 
 Step 2: If you are using Unix/Linux/macOS run the following command in the terminal.
+----------------------------------------------
 
 python3 -m pip install --user virtualenv
 Step 3: If you are using windows the following command in the command prompt.
 
 py -m pip install --user virtualenv
-----------------------------------------------
 
 Step 4: Create a virtual environment.
-
+-----------------------------------------------
  Unix/Linux/macOS users run the following command 
 python3 -m venv env
 Windows users run the following command
 py -m venv env
-----------------------------------------------
+
 Step 5: Activate the virtual environment and verify it
+------------------------------------------------------
 
  Unix/Linux/macOS users run the following command 
 source env/bin/activate

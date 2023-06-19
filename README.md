@@ -3,7 +3,7 @@
 Clone a Django Project from GitHub and Run
 
 
-* Install the virtualenv
+###Install the virtualenv
 
 Step 1: Install the virtual environment by running the following command.
 ---------------------------------------------
@@ -31,15 +31,14 @@ Windows users run the following command
 .\env\Scripts\activate
 If you have trouble in creating or activating the virtual environment refer to this article.
 
-* Clone a GitHub Repository 
+###Clone a GitHub Repository 
 Copy the URL of the GitHub repository if you want to clone it in the tutorial we are using this repository. Run the git clone command in the terminal or git bash to clone the repository.
 
 Syntax: git clone "URL of GitHub repository"
 git clone "https://github.com/Hardik-Kushwaha/Face-Detection-Minor1"
 
 
-
-* Deploy Django Project from GitHub
+###Deploy Django Project from GitHub
 After the repository is cloned successfully change the directory to the recent clone repository in which the Django project is kept.
 
 cd Face-Detection-Minor1
